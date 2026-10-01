@@ -1,0 +1,646 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-16T20:37:51.495635+00:00",
+  "origin_lon": 18.64522065459,
+  "origin_lat": 54.361901376422,
+  "terrain_grid": {
+    "grid_x": -2480.0,
+    "grid_z": -270.0,
+    "columns": 590,
+    "rows": 733,
+    "spacing_m": 5.0,
+    "generated_at": "2026-09-15T13:03:20.006383+00:00"
+  },
+  "source_crs_override": "EPSG:2180",
+  "lidar_sources": [
+    {
+      "file": "70930_849048_N-34-50-C-c-4-4-4-3.laz",
+      "retained_ground_returns": 205428,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849049_N-34-50-C-c-4-4-4-4.laz",
+      "retained_ground_returns": 117832,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849190_N-34-50-C-d-3-1-4-1.laz",
+      "retained_ground_returns": 80276,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849191_N-34-50-C-d-3-1-4-2.laz",
+      "retained_ground_returns": 3650,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849192_N-34-50-C-d-3-1-4-3.laz",
+      "retained_ground_returns": 198695,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849214_N-34-50-C-d-3-3-2-1.laz",
+      "retained_ground_returns": 181582,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849216_N-34-50-C-d-3-3-2-3.laz",
+      "retained_ground_returns": 171015,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849218_N-34-50-C-d-3-3-3-1.laz",
+      "retained_ground_returns": 230259,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849219_N-34-50-C-d-3-3-3-2.laz",
+      "retained_ground_returns": 87956,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849220_N-34-50-C-d-3-3-3-3.laz",
+      "retained_ground_returns": 50359,
+      "embedded_crs": null
+    },
+    {
+      "file": "70930_849222_N-34-50-C-d-3-3-4-1.laz",
+      "retained_ground_returns": 95831,
+      "embedded_crs": null
+    }
+  ],
+  "imagery_manifests": [
+    "pobieracz_ortofoto_20260915222837.txt",
+    "pobieracz_ortofoto_20260915225632.txt"
+  ],
+  "quality": [
+    {
+      "shape_id": "108_764060",
+      "ground_return_count": 1422883,
+      "lidar_supported_fraction": 0.8267702986834761,
+      "median_absolute_lidar_nmt_difference_m": 0.040935922805130254,
+      "p95_absolute_lidar_nmt_difference_m": 0.12484466384923962,
+      "maximum_centerline_grade": 0.12000000000000455,
+      "p99_crossfall": 0.07935959611820055
+    },
+    {
+      "shape_id": "108_763981",
+      "ground_return_count": 1422883,
+      "lidar_supported_fraction": 0.8414603283452932,
+      "median_absolute_lidar_nmt_difference_m": 0.03915359091926396,
+      "p95_absolute_lidar_nmt_difference_m": 0.12124082211406773,
+      "maximum_centerline_grade": 0.12000000000000455,
+      "p99_crossfall": 0.07999999999999978
+    }
+  ],
+  "directions": [
+    {
+      "id": "0",
+      "shape_id": "108_764060",
+      "headsign": "Che\u0142m Wi\u0119ckowskiego",
+      "sections": 12541,
+      "columns": 19,
+      "length_m": 6269.676331465125,
+      "spacing_m": 0.5,
+      "lateral_spacing_m": 0.5,
+      "half_width_m": 4.5,
+      "surface_lift_m": 0.18,
+      "vertex_count": 238279,
+      "triangle_count": 451440,
+      "lidar_supported_fraction": 0.8267702986834761,
+      "texture_coverage": 1.0,
+      "chunks": [
+        {
+          "position_file": "res://data/roads_108/108_764060_00.bin",
+          "texture_file": "res://data/roads_108/108_764060_00.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 0.0,
+          "end_distance_m": 255.99774026165596,
+          "lidar_supported_fraction": 0.9909715809992818
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_01.bin",
+          "texture_file": "res://data/roads_108/108_764060_01.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 255.99774026165596,
+          "end_distance_m": 511.99730282155497,
+          "lidar_supported_fraction": 0.9978454909202832
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_02.bin",
+          "texture_file": "res://data/roads_108/108_764060_02.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 511.99730282155497,
+          "end_distance_m": 767.9946935621684,
+          "lidar_supported_fraction": 0.9996922129886119
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_03.bin",
+          "texture_file": "res://data/roads_108/108_764060_03.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 767.9946935621684,
+          "end_distance_m": 1023.9937989517662,
+          "lidar_supported_fraction": 0.9600902841900072
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_04.bin",
+          "texture_file": "res://data/roads_108/108_764060_04.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1023.9937989517662,
+          "end_distance_m": 1279.993490139655,
+          "lidar_supported_fraction": 0.9761978044526521
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_05.bin",
+          "texture_file": "res://data/roads_108/108_764060_05.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1279.993490139655,
+          "end_distance_m": 1535.9923275788947,
+          "lidar_supported_fraction": 0.9956909818405664
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_06.bin",
+          "texture_file": "res://data/roads_108/108_764060_06.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1535.9923275788947,
+          "end_distance_m": 1791.9913093196576,
+          "lidar_supported_fraction": 0.31814917410485277
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_07.bin",
+          "texture_file": "res://data/roads_108/108_764060_07.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1791.9913093196576,
+          "end_distance_m": 2047.9911889348077,
+          "lidar_supported_fraction": 0.8708320508874525
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_08.bin",
+          "texture_file": "res://data/roads_108/108_764060_08.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2047.9911889348077,
+          "end_distance_m": 2303.991046860921,
+          "lidar_supported_fraction": 0.6187544885605828
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_09.bin",
+          "texture_file": "res://data/roads_108/108_764060_09.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2303.991046860921,
+          "end_distance_m": 2559.986601959201,
+          "lidar_supported_fraction": 0.7412537190930543
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_10.bin",
+          "texture_file": "res://data/roads_108/108_764060_10.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2559.986601959201,
+          "end_distance_m": 2815.9861054404555,
+          "lidar_supported_fraction": 0.6863650353955063
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_11.bin",
+          "texture_file": "res://data/roads_108/108_764060_11.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2815.9861054404555,
+          "end_distance_m": 3071.985856272121,
+          "lidar_supported_fraction": 0.4215656099312609
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_12.bin",
+          "texture_file": "res://data/roads_108/108_764060_12.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3071.985856272121,
+          "end_distance_m": 3327.985676336423,
+          "lidar_supported_fraction": 0.640709962039602
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_13.bin",
+          "texture_file": "res://data/roads_108/108_764060_13.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3327.985676336423,
+          "end_distance_m": 3583.9822418780354,
+          "lidar_supported_fraction": 0.6645121575869498
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_14.bin",
+          "texture_file": "res://data/roads_108/108_764060_14.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3583.9822418780354,
+          "end_distance_m": 3839.9716100153237,
+          "lidar_supported_fraction": 0.9842002667487432
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_15.bin",
+          "texture_file": "res://data/roads_108/108_764060_15.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3839.9716100153237,
+          "end_distance_m": 4095.9495045116064,
+          "lidar_supported_fraction": 0.9378270236995999
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_16.bin",
+          "texture_file": "res://data/roads_108/108_764060_16.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4095.9495045116064,
+          "end_distance_m": 4351.9494451089995,
+          "lidar_supported_fraction": 0.7797270955165692
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_17.bin",
+          "texture_file": "res://data/roads_108/108_764060_17.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4351.9494451089995,
+          "end_distance_m": 4607.925984398789,
+          "lidar_supported_fraction": 0.8436441982148354
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_18.bin",
+          "texture_file": "res://data/roads_108/108_764060_18.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4607.925984398789,
+          "end_distance_m": 4863.9257573227915,
+          "lidar_supported_fraction": 0.9463424643480045
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_19.bin",
+          "texture_file": "res://data/roads_108/108_764060_19.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4863.9257573227915,
+          "end_distance_m": 5119.9256248417705,
+          "lidar_supported_fraction": 0.9083820662768031
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_20.bin",
+          "texture_file": "res://data/roads_108/108_764060_20.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5119.9256248417705,
+          "end_distance_m": 5375.925432449895,
+          "lidar_supported_fraction": 0.8953524161280394
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_21.bin",
+          "texture_file": "res://data/roads_108/108_764060_21.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5375.925432449895,
+          "end_distance_m": 5631.9191744956115,
+          "lidar_supported_fraction": 0.9950754078177901
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_22.bin",
+          "texture_file": "res://data/roads_108/108_764060_22.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5631.9191744956115,
+          "end_distance_m": 5887.914896308077,
+          "lidar_supported_fraction": 0.962244793269724
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_23.bin",
+          "texture_file": "res://data/roads_108/108_764060_23.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5887.914896308077,
+          "end_distance_m": 6143.912917233546,
+          "lidar_supported_fraction": 0.7508977121165487
+        },
+        {
+          "position_file": "res://data/roads_108/108_764060_24.bin",
+          "texture_file": "res://data/roads_108/108_764060_24.png",
+          "sections": 253,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 6143.912917233546,
+          "end_distance_m": 6269.676331465125,
+          "lidar_supported_fraction": 0.7426669440399417
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "shape_id": "108_763981",
+      "headsign": "Plac Solidarno\u015bci",
+      "sections": 12894,
+      "columns": 19,
+      "length_m": 6446.245006406995,
+      "spacing_m": 0.5,
+      "lateral_spacing_m": 0.5,
+      "half_width_m": 4.5,
+      "surface_lift_m": 0.18,
+      "vertex_count": 244986,
+      "triangle_count": 464148,
+      "lidar_supported_fraction": 0.8414603283452932,
+      "texture_coverage": 1.0,
+      "chunks": [
+        {
+          "position_file": "res://data/roads_108/108_763981_00.bin",
+          "texture_file": "res://data/roads_108/108_763981_00.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 0.0,
+          "end_distance_m": 255.9924068517304,
+          "lidar_supported_fraction": 0.7770596080845388
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_01.bin",
+          "texture_file": "res://data/roads_108/108_763981_01.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 255.9924068517304,
+          "end_distance_m": 511.99224191757634,
+          "lidar_supported_fraction": 0.8165589412126808
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_02.bin",
+          "texture_file": "res://data/roads_108/108_763981_02.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 511.99224191757634,
+          "end_distance_m": 767.9876871166078,
+          "lidar_supported_fraction": 0.9959987688519545
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_03.bin",
+          "texture_file": "res://data/roads_108/108_763981_03.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 767.9876871166078,
+          "end_distance_m": 1023.9821053805042,
+          "lidar_supported_fraction": 0.9845080537601313
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_04.bin",
+          "texture_file": "res://data/roads_108/108_763981_04.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1023.9821053805042,
+          "end_distance_m": 1279.9818647852023,
+          "lidar_supported_fraction": 0.9576279880989023
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_05.bin",
+          "texture_file": "res://data/roads_108/108_763981_05.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1279.9818647852023,
+          "end_distance_m": 1535.9818013079102,
+          "lidar_supported_fraction": 0.9825587360213399
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_06.bin",
+          "texture_file": "res://data/roads_108/108_763981_06.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1535.9818013079102,
+          "end_distance_m": 1791.9815836844375,
+          "lidar_supported_fraction": 0.846209089976403
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_07.bin",
+          "texture_file": "res://data/roads_108/108_763981_07.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 1791.9815836844375,
+          "end_distance_m": 2047.9662000517758,
+          "lidar_supported_fraction": 0.9553708833487227
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_08.bin",
+          "texture_file": "res://data/roads_108/108_763981_08.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2047.9662000517758,
+          "end_distance_m": 2303.9661831512794,
+          "lidar_supported_fraction": 0.7612598748332821
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_09.bin",
+          "texture_file": "res://data/roads_108/108_763981_09.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2303.9661831512794,
+          "end_distance_m": 2559.953383898289,
+          "lidar_supported_fraction": 0.9540371396327075
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_10.bin",
+          "texture_file": "res://data/roads_108/108_763981_10.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2559.953383898289,
+          "end_distance_m": 2815.9437725693956,
+          "lidar_supported_fraction": 0.9017133476967272
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_11.bin",
+          "texture_file": "res://data/roads_108/108_763981_11.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 2815.9437725693956,
+          "end_distance_m": 3071.933986859469,
+          "lidar_supported_fraction": 0.7850620703806299
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_12.bin",
+          "texture_file": "res://data/roads_108/108_763981_12.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3071.933986859469,
+          "end_distance_m": 3327.93383963008,
+          "lidar_supported_fraction": 0.6136247050374474
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_13.bin",
+          "texture_file": "res://data/roads_108/108_763981_13.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3327.93383963008,
+          "end_distance_m": 3583.9332466155597,
+          "lidar_supported_fraction": 0.4525495024109983
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_14.bin",
+          "texture_file": "res://data/roads_108/108_763981_14.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3583.9332466155597,
+          "end_distance_m": 3839.933077323735,
+          "lidar_supported_fraction": 0.6942649020211347
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_15.bin",
+          "texture_file": "res://data/roads_108/108_763981_15.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 3839.933077323735,
+          "end_distance_m": 4095.9282632803506,
+          "lidar_supported_fraction": 0.5268287678259977
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_16.bin",
+          "texture_file": "res://data/roads_108/108_763981_16.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4095.9282632803506,
+          "end_distance_m": 4351.928009374115,
+          "lidar_supported_fraction": 0.894429055093875
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_17.bin",
+          "texture_file": "res://data/roads_108/108_763981_17.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4351.928009374115,
+          "end_distance_m": 4607.927182010076,
+          "lidar_supported_fraction": 0.6300400123114804
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_18.bin",
+          "texture_file": "res://data/roads_108/108_763981_18.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4607.927182010076,
+          "end_distance_m": 4863.926690037274,
+          "lidar_supported_fraction": 0.5719708628295886
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_19.bin",
+          "texture_file": "res://data/roads_108/108_763981_19.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 4863.926690037274,
+          "end_distance_m": 5119.922309065172,
+          "lidar_supported_fraction": 0.9704524469067405
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_20.bin",
+          "texture_file": "res://data/roads_108/108_763981_20.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5119.922309065172,
+          "end_distance_m": 5375.922103954426,
+          "lidar_supported_fraction": 0.9958961731814917
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_21.bin",
+          "texture_file": "res://data/roads_108/108_763981_21.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5375.922103954426,
+          "end_distance_m": 5631.921932774468,
+          "lidar_supported_fraction": 0.9748640607366369
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_22.bin",
+          "texture_file": "res://data/roads_108/108_763981_22.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5631.921932774468,
+          "end_distance_m": 5887.921714929653,
+          "lidar_supported_fraction": 0.9901508156355802
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_23.bin",
+          "texture_file": "res://data/roads_108/108_763981_23.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 5887.921714929653,
+          "end_distance_m": 6143.921178544357,
+          "lidar_supported_fraction": 0.9834820970555043
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_24.bin",
+          "texture_file": "res://data/roads_108/108_763981_24.png",
+          "sections": 513,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 6143.921178544357,
+          "end_distance_m": 6399.915932121788,
+          "lidar_supported_fraction": 0.9915871550220581
+        },
+        {
+          "position_file": "res://data/roads_108/108_763981_25.bin",
+          "texture_file": "res://data/roads_108/108_763981_25.png",
+          "sections": 94,
+          "columns": 19,
+          "stride": 6,
+          "start_distance_m": 6399.915932121788,
+          "end_distance_m": 6446.245006406995,
+          "lidar_supported_fraction": 1.0
+        }
+      ]
+    }
+  ],
+  "attribution": "ZTM Gdansk GTFS route shape / CC BY; GUGiK Geoportal LiDAR 2018 and orthophotos 2021.",
+  "limitations": "Nine-metre route-driving strips, not surveyed carriageway boundaries. LiDAR class-2 robust elevations with NMT fallback; 25cm curvilinear imagery includes baked objects/shadows. Bridges require explicit deck review."
+}

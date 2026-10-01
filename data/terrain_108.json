@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-15T13:03:20.006383+00:00",
+  "source_crs": "EPSG:2180",
+  "crs_note": "Explicit import parameter; ASC headers contain no CRS. No vertical datum conversion.",
+  "source_manifest": "pobieracz_nmt_20260915143625.txt",
+  "source_survey_dates": [
+    "2018-03-18"
+  ],
+  "attribution": "GUGiK / Geoportal NMT; source metadata retained alongside original downloads.",
+  "sources": [
+    {
+      "file": "70932_850478_N-34-50-C-c-4-2.asc",
+      "bounds": [
+        473604.5,
+        721183.5,
+        475647.5,
+        723513.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "70932_850480_N-34-50-C-c-4-4.asc",
+      "bounds": [
+        473590.5,
+        718866.5,
+        475635.5,
+        721195.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "70932_850489_N-34-50-C-d-3-1.asc",
+      "bounds": [
+        475635.5,
+        721174.5,
+        477677.5,
+        723502.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "70932_850491_N-34-50-C-d-3-3.asc",
+      "bounds": [
+        475622.5,
+        718856.5,
+        477665.5,
+        721184.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "70932_850516_N-34-62-A-a-2-2.asc",
+      "bounds": [
+        473577.5,
+        716549.5,
+        475623.5,
+        718878.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "70932_850523_N-34-62-A-b-1-1.asc",
+      "bounds": [
+        475609.5,
+        716538.5,
+        477654.5,
+        718867.5
+      ],
+      "resolution": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "spacing_m": 5.0,
+  "bounds": [
+    474355.0,
+    718565.0,
+    477515.0,
+    722405.0
+  ],
+  "columns": 590,
+  "rows": 733,
+  "valid_fraction": 1.0,
+  "route_samples": 708,
+  "route_missing": 0,
+  "height_min": -1.395635724067688,
+  "height_max": 88.21284484863281,
+  "route_height_min": 2.181483030319214,
+  "route_height_max": 67.277099609375,
+  "origin_lon": 18.64522065459,
+  "origin_lat": 54.361901376422,
+  "grid_x": -2480.0,
+  "grid_z": -270.0,
+  "height_file": "res://data/terrain_108.bin",
+  "encoding": "little-endian float32 metres, row-major, north to south, cell centres"
+}

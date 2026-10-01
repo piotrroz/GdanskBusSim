@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.cache/
+/data/*.asc
+/data/*.tif
+/data/*.tiff
+/data/*.laz
+/data/*.las
+__pycache__/
+.venv/

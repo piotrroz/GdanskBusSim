@@ -1,0 +1,4 @@
+-r requirements-terrain.txt
+laspy[lazrs]>=2.6,<3
+scipy>=1.15,<2
+shapely>=2.1,<3

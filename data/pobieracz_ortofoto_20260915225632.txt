@@ -1,0 +1,2 @@
+nazwa_pliku,godlo,aktualnosc,wielkosc_piksela,uklad_wspolrzednych,caly_arkusz_wypelniony_trescia,modul_archiwizacji,zrodlo_danych,kolor,numer_zgloszenia_pracy,aktualnosc_rok
+75127_1070253_N-34-50-C-c-4-4.tif,N-34-50-C-c-4-4,2021-09-08,0.25,PL-1992,TAK,1:5000,Zdj. cyfrowe,RGB,DFT.7201.030.2021,2021

@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-15T21:00:02.213734+00:00",
+  "attribution": "GUGiK / Geoportal orthophotos; original download metadata retained.",
+  "source_manifests": [
+    "pobieracz_ortofoto_20260915222837.txt",
+    "pobieracz_ortofoto_20260915225632.txt"
+  ],
+  "sources": [
+    {
+      "file": "75127_1070253_N-34-50-C-c-4-4.tif",
+      "bytes": 47170762,
+      "crs": "EPSG:2180",
+      "width": 8176,
+      "height": 9314,
+      "bounds": [
+        473591.5,
+        718867.5,
+        475635.5,
+        721196.0
+      ],
+      "resolution": [
+        0.25,
+        0.25
+      ],
+      "bands": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "survey_date": "2021-09-08",
+      "sheet": "N-34-50-C-c-4-4"
+    },
+    {
+      "file": "75127_1070254_N-34-50-C-d-3-1.tif",
+      "bytes": 40038386,
+      "crs": "PROJCS[\"ETRF2000-PL / CS92\",GEOGCS[\"ETRF2000-PL\",DATUM[\"ETRF2000_Poland\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"1305\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"9702\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",19],PARAMETER[\"scale_factor\",0.9993],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",-5300000],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2180\"]]",
+      "width": 8168,
+      "height": 9312,
+      "bounds": [
+        475635.2499999999,
+        721174.2499998081,
+        477677.2500000003,
+        723502.2499998128
+      ],
+      "resolution": [
+        0.2500000000000499,
+        0.25000000000050004
+      ],
+      "bands": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "survey_date": "2021-07-13",
+      "sheet": "N-34-50-C-d-3-1"
+    },
+    {
+      "file": "75127_1070256_N-34-50-C-d-3-3.tif",
+      "bytes": 45482401,
+      "crs": "PROJCS[\"ETRF2000-PL / CS92\",GEOGCS[\"ETRS89\",DATUM[\"European_Terrestrial_Reference_System_1989\",SPHEROID[\"GRS 1980\",6378137,298.257221999999,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6258\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4258\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",19],PARAMETER[\"scale_factor\",0.9993],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",-5300000],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2180\"]]",
+      "width": 8172,
+      "height": 9311,
+      "bounds": [
+        475623.0,
+        718857.0,
+        477666.0,
+        721184.75
+      ],
+      "resolution": [
+        0.25,
+        0.25
+      ],
+      "bands": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "survey_date": "2021-09-08",
+      "sheet": "N-34-50-C-d-3-3"
+    },
+    {
+      "file": "75127_1070328_N-34-62-A-a-2-2.tif",
+      "bytes": 47678462,
+      "crs": "EPSG:2180",
+      "width": 8180,
+      "height": 9316,
+      "bounds": [
+        473578.25,
+        716550.0,
+        475623.25,
+        718879.0
+      ],
+      "resolution": [
+        0.25,
+        0.25
+      ],
+      "bands": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "survey_date": "2021-09-08",
+      "sheet": "N-34-62-A-a-2-2"
+    },
+    {
+      "file": "75127_1070335_N-34-62-A-b-1-1.tif",
+      "bytes": 45454068,
+      "crs": "EPSG:2180",
+      "width": 8175,
+      "height": 9313,
+      "bounds": [
+        475610.75,
+        716539.5,
+        477654.5,
+        718867.75
+      ],
+      "resolution": [
+        0.25,
+        0.25
+      ],
+      "bands": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "survey_date": "2021-09-08",
+      "sheet": "N-34-62-A-b-1-1"
+    }
+  ],
+  "source_survey_dates": [
+    "2021-07-13",
+    "2021-09-08"
+  ],
+  "source_mib": 215.36,
+  "route_shape_samples": 708,
+  "route_shape_samples_in_source_bounds": 708,
+  "origin_lon": 18.64522065459,
+  "origin_lat": 54.361901376422,
+  "grid_x": -2480.0,
+  "grid_z": -270.0,
+  "width_m": 2945.0,
+  "height_m": 3660.0,
+  "width": 2945,
+  "height": 3660,
+  "metres_per_pixel": [
+    1.0,
+    1.0
+  ],
+  "valid_fraction": 0.8785990889439357,
+  "texture_file": "res://data/orthophoto_108.png",
+  "uncovered_color": "#829a70",
+  "layout": "Image edges match terrain mesh bounds; north at top, east at right. No height changes.",
+  "route_shape_samples_with_imagery": 708,
+  "stops_without_imagery": [],
+  "suggested_missing_sheets": [],
+  "suggestion_basis": "Existing NMT sheet extents containing uncovered route points; search equivalent orthophoto sheets."
+}

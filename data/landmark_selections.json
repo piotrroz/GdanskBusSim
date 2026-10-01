@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "source_crs": "EPSG:2180",
+  "landmarks": [
+    {
+      "key": "station",
+      "name": "Gdansk Glowny station",
+      "northing": 721345.37,
+      "easting": 476906.75,
+      "expected_osm_id": "60147322"
+    },
+    {
+      "key": "forum",
+      "name": "Forum Gdansk",
+      "northing": 720639.46,
+      "easting": 476850.34,
+      "expected_osm_id": "569238861"
+    }
+  ]
+}

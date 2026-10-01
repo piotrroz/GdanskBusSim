@@ -1,0 +1,5 @@
+nazwa_pliku,godlo,aktualnosc,wielkosc_piksela,uklad_wspolrzednych,caly_arkusz_wypelniony_trescia,modul_archiwizacji,zrodlo_danych,kolor,numer_zgloszenia_pracy,aktualnosc_rok
+75127_1070256_N-34-50-C-d-3-3.tif,N-34-50-C-d-3-3,2021-09-08,0.25,PL-1992,TAK,1:5000,Zdj. cyfrowe,RGB,DFT.7201.030.2021,2021
+75127_1070254_N-34-50-C-d-3-1.tif,N-34-50-C-d-3-1,2021-07-13,0.25,PL-1992,TAK,1:5000,Zdj. cyfrowe,RGB,DFT.7201.030.2021,2021
+75127_1070328_N-34-62-A-a-2-2.tif,N-34-62-A-a-2-2,2021-09-08,0.25,PL-1992,TAK,1:5000,Zdj. cyfrowe,RGB,DFT.7201.030.2021,2021
+75127_1070335_N-34-62-A-b-1-1.tif,N-34-62-A-b-1-1,2021-09-08,0.25,PL-1992,TAK,1:5000,Zdj. cyfrowe,RGB,DFT.7201.030.2021,2021

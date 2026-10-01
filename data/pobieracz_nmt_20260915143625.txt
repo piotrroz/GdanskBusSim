@@ -1,0 +1,8 @@
+nazwa_pliku,format,godlo,aktualnosc,dokladnosc_pozioma,dokladnosc_pionowa,numer_zgloszenia_pracy,aktualnosc_rok,zrodlo_danych
+70932_850480_N-34-50-C-c-4-4.asc,ARC/INFO ASCII GRID,N-34-50-C-c-4-4,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850491_N-34-50-C-d-3-3.asc,ARC/INFO ASCII GRID,N-34-50-C-d-3-3,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850489_N-34-50-C-d-3-1.asc,ARC/INFO ASCII GRID,N-34-50-C-d-3-1,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850516_N-34-62-A-a-2-2.asc,ARC/INFO ASCII GRID,N-34-62-A-a-2-2,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850523_N-34-62-A-b-1-1.asc,ARC/INFO ASCII GRID,N-34-62-A-b-1-1,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850478_N-34-50-C-c-4-2.asc,ARC/INFO ASCII GRID,N-34-50-C-c-4-2,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
+70932_850490_N-34-50-C-d-3-2.asc,ARC/INFO ASCII GRID,N-34-50-C-d-3-2,2018-03-18,1.00 m,0.10,DFT.7201.015.2018,2018,Skaning laserowy
