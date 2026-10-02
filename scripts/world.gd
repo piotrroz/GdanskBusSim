@@ -2,7 +2,7 @@ extends Node3D
 
 const Terrain = preload("res://scripts/terrain.gd")
 const LidarScenery = preload("res://scripts/lidar_scenery.gd")
-const RoadSurface = preload("res://scripts/road_surface.gd")
+const RoadSurface = preload("res://scripts/road_network.gd")
 var terrain: Node3D
 var lidar: Node3D
 var road: Node3D
@@ -57,6 +57,14 @@ func project(lon: float, lat: float) -> Vector3:
 
 func height_at(location: Vector3) -> float:
 	return terrain.height_at(location) if is_instance_valid(terrain) else 0.0
+
+# Route surface (bridges and tunnels included) near the bus route, terrain elsewhere.
+func surface_height(location: Vector3) -> float:
+	if is_instance_valid(road) and road.available:
+		var height: float = road.route_height(location)
+		if not is_nan(height):
+			return height
+	return height_at(location) + ROAD_LIFT
 
 func paint(hex: String) -> StandardMaterial3D:
 	var result := StandardMaterial3D.new()
@@ -122,7 +130,7 @@ func nearest(location: Vector3, minimum := 0.0) -> Dictionary:
 		offset.y = 0
 		var fraction := clampf(offset.dot(segment) / maxf(segment.length_squared(), 0.001), 0, 1)
 		var candidate := points[index] + segment * fraction
-		candidate.y = height_at(candidate)
+		candidate.y = surface_height(candidate)
 		var error := Vector2(candidate.x - location.x, candidate.z - location.z).length_squared()
 		if error < best:
 			best = error
@@ -193,7 +201,7 @@ func build(direction: Dictionary) -> void:
 		stop_distances.append(previous)
 		var right: Vector3 = match_point.tangent.cross(Vector3.UP)
 		var platform: Vector3 = match_point.point + right * 6.4
-		platform.y = height_at(platform) + ROAD_LIFT
+		platform.y = maxf(height_at(platform) + ROAD_LIFT, match_point.point.y)
 		stop_positions.append(platform)
 		build_stop(platform, match_point.tangent, str(stop.name))
 	build_guidance()
@@ -211,7 +219,7 @@ func build_guidance() -> void:
 			if next_mark >= distances[index]:
 				var center := points[index] + tangent * (next_mark - distances[index]) + right * 2.5 + Vector3.UP * 0.065
 				for vertex in [center + tangent * 1.4, center - tangent - right * 0.5, center - tangent + right * 0.5]:
-					vertex.y = height_at(vertex) + ROAD_LIFT + 0.065
+					vertex.y = surface_height(vertex) + 0.1
 					surface.set_normal(Vector3.UP)
 					surface.add_vertex(vertex)
 			next_mark += 28.0
@@ -274,6 +282,8 @@ func load_osm() -> void:
 		if path.size() < 2:
 			continue
 		if tags.has("highway"):
+			if is_instance_valid(road) and road.available and road.included_way_ids.has(str(int(element.id))):
+				continue
 			var width := 6.5
 			if str(tags.highway) in ["primary", "secondary", "trunk"]:
 				width = 10.0
@@ -284,39 +294,25 @@ func load_osm() -> void:
 			else:
 				ribbon(path, width, 0.0, road_material)
 		elif tags.has("building") and path.size() >= 4:
-			var measured: bool = lidar.buildings_by_id.has(str(int(element.id)))
-			var base_height := path[0].y
-			for vertex in path:
-				base_height = maxf(base_height, vertex.y)
-			var polygon := PackedVector2Array()
-			for index in range(path.size() - 1):
-				polygon.append(Vector2(path[index].x, path[index].z))
-			var indices := Geometry2D.triangulate_polygon(polygon)
-			if indices.is_empty():
-				continue
-			var levels := float(str(tags.get("building:levels", "3")))
-			var height := clampf(float(str(tags.get("height", str(levels * 3.2))).trim_suffix(" m")), 3.0, 65.0)
-			var palette := [Color("c5b6a7"), Color("d5d2c7"), Color("a6aaa6"), Color("bd9b89"), Color("d9d9cd")]
-			var color: Color = palette[int(element.id) % palette.size()]
-			for index in range(path.size() - 1):
-				var start := Vector3(path[index].x, base_height - 4.0, path[index].z)
-				var finish := Vector3(path[index + 1].x, base_height - 4.0, path[index + 1].z)
-				var top := Vector3.UP * (height + 4.0)
-				for vertex in [start, finish, finish + top, start, finish + top, start + top]:
-					buildings.set_color(color)
-					buildings.add_vertex(vertex)
+			var identifier := str(int(element.id))
+			var clipped: bool = is_instance_valid(road) and road.building_clips.has(identifier)
+			var measured: bool = lidar.buildings_by_id.has(identifier) and not clipped
+			var footprints: Array = []
+			if clipped:
+				# Footprint parts that do not overlap a bridge deck (e.g. a car park under a viaduct).
+				for ring in road.building_clips[identifier]:
+					var part := PackedVector3Array()
+					for point in ring:
+						part.append(Vector3(float(point[0]), height_at(Vector3(float(point[0]), 0, float(point[1]))), float(point[1])))
+					part.append(part[0])
+					footprints.append(part)
+			else:
+				footprints.append(path)
+			for footprint in footprints:
+				if add_building(buildings, fallback, footprint, tags, int(element.id), measured):
+					building_count += 1
 					if not measured:
-						fallback.set_color(color)
-						fallback.add_vertex(vertex)
-			for index in indices:
-				buildings.set_color(color.darkened(0.24))
-				buildings.add_vertex(Vector3(polygon[index].x, base_height + height, polygon[index].y))
-				if not measured:
-					fallback.set_color(color.darkened(0.24))
-					fallback.add_vertex(Vector3(polygon[index].x, base_height + height, polygon[index].y))
-			if not measured:
-				fallback_count += 1
-			building_count += 1
+						fallback_count += 1
 	if building_count > 0:
 		buildings.generate_normals()
 		var instance := MeshInstance3D.new()
@@ -332,3 +328,35 @@ func load_osm() -> void:
 		instance.material_override = building_material
 		add_child(instance)
 	lidar.build()
+
+func add_building(buildings: SurfaceTool, fallback: SurfaceTool, path: PackedVector3Array, tags: Dictionary, identifier: int, measured: bool) -> bool:
+	var base_height := path[0].y
+	for vertex in path:
+		base_height = maxf(base_height, vertex.y)
+	var polygon := PackedVector2Array()
+	for index in range(path.size() - 1):
+		polygon.append(Vector2(path[index].x, path[index].z))
+	var indices := Geometry2D.triangulate_polygon(polygon)
+	if indices.is_empty():
+		return false
+	var levels := float(str(tags.get("building:levels", "3")))
+	var height := clampf(float(str(tags.get("height", str(levels * 3.2))).trim_suffix(" m")), 3.0, 65.0)
+	var palette := [Color("c5b6a7"), Color("d5d2c7"), Color("a6aaa6"), Color("bd9b89"), Color("d9d9cd")]
+	var color: Color = palette[identifier % palette.size()]
+	for index in range(path.size() - 1):
+		var start := Vector3(path[index].x, base_height - 4.0, path[index].z)
+		var finish := Vector3(path[index + 1].x, base_height - 4.0, path[index + 1].z)
+		var top := Vector3.UP * (height + 4.0)
+		for vertex in [start, finish, finish + top, start, finish + top, start + top]:
+			buildings.set_color(color)
+			buildings.add_vertex(vertex)
+			if not measured:
+				fallback.set_color(color)
+				fallback.add_vertex(vertex)
+	for index in indices:
+		buildings.set_color(color.darkened(0.24))
+		buildings.add_vertex(Vector3(polygon[index].x, base_height + height, polygon[index].y))
+		if not measured:
+			fallback.set_color(color.darkened(0.24))
+			fallback.add_vertex(Vector3(polygon[index].x, base_height + height, polygon[index].y))
+	return true

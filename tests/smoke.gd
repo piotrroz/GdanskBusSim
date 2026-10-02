@@ -120,6 +120,7 @@ func check_curb(game: Node3D) -> void:
 		var worst_embankment := 0.0
 		var profiles := 0
 		var embankments := 0
+		var structure_edges := 0
 		# Offset 7 keeps samples off 512-section chunk seams, where rays can slip between collision shapes.
 		for index in range(47, road.centerline.size() - 40, 40):
 			var frame := road_frame(road, index)
@@ -144,10 +145,19 @@ func check_curb(game: Node3D) -> void:
 						print("worst candidate index %d side %d: %s" % [index, side, heights])
 					worst = maxf(worst, steepest)
 				else:
+					# A drop of over 1.5 m between adjacent samples is the side of a bridge approach or deck, not a verge.
+					var structure_edge := false
+					for sample in range(1, heights.size()):
+						structure_edge = structure_edge or absf(heights[sample] - heights[sample - 1]) > 1.5
+					if structure_edge:
+						structure_edges += 1
+						continue
+					if steepest > worst_embankment and "--curb-debug" in OS.get_cmdline_user_args():
+						print("worst embankment index %d side %d at %s: %s" % [index, side, frame.centre, heights])
 					worst_embankment = maxf(worst_embankment, steepest)
 					embankments += 1
 				profiles += 1
-		print("Curb direction %d: %d edge profiles, steepest kerb-sized gradient %.2f; %d embankments, steepest %.2f" % [direction, profiles, worst, embankments, worst_embankment])
+		print("Curb direction %d: %d edge profiles, steepest kerb-sized gradient %.2f; %d embankments, steepest %.2f; %d raised-structure edges" % [direction, profiles, worst, embankments, worst_embankment, structure_edges])
 		check(worst < 1.0, "Kerb-sized road edges must stay climbable, below 45 degrees (gradient %.2f)" % worst)
 		check(worst_embankment < 2.0, "Embankment edges must not form vertical walls (gradient %.2f)" % worst_embankment)
 		var space := game.get_world_3d().direct_space_state

@@ -119,7 +119,7 @@ func run() -> void:
 		batch.visible = true
 	print("LIDAR: %d buildings, %d canopy proxies, %d changed pixel samples" % [lidar.measured_building_count, lidar.tree_count, vegetation_changes])
 	var road = game.city.road
-	assert(road.available and road.mesh_instances.size() == road.direction.chunks.size(), "Detailed road chunks must load")
+	assert(road.available and road.mesh_instances.size() == road.metadata.tiles.size(), "Road network tiles must load")
 	assert(not terrain.photo_mode and not road.photo_mode and not lidar.photo_mode, "Rendering must start stylised")
 	assert(game.city.street_network.visible and game.city.street_network.get_child_count() > 0, "Stylised side streets must be drawn")
 	var before: float = terrain.height_at(game.bus.position)
@@ -128,7 +128,7 @@ func run() -> void:
 	toggle.pressed = true
 	game._unhandled_input(toggle)
 	assert(terrain.photo_mode and road.photo_mode and lidar.photo_mode, "O must switch every layer to photo mode")
-	assert(road.mesh_instances[0].mesh.surface_get_material(0) == road.photo_materials[0], "Roads must use imagery in photo mode")
+	assert(road.road_material.get_shader_parameter("photo"), "Roads must use imagery in photo mode")
 	assert(not game.city.street_network.visible, "Stylised streets must hide over photographed streets")
 	assert(terrain.height_at(game.bus.position) == before, "Mode toggle must not modify terrain heights")
 	var photo := await capture("compact_photo.png")
@@ -139,7 +139,7 @@ func run() -> void:
 				changed += 1
 	assert(changed > 100, "Photo mode must visibly change the rendering")
 	game._unhandled_input(toggle)
-	assert(not terrain.photo_mode and road.mesh_instances[0].mesh.surface_get_material(0) == road.stylised_material, "O must restore stylised rendering")
+	assert(not terrain.photo_mode and not road.road_material.get_shader_parameter("photo"), "O must restore stylised rendering")
 	print("RENDER MODES: stylised default, photo toggle with %d changed pixel samples" % changed)
 	assert(int(terrain.orthophoto_metadata.route_shape_samples_with_imagery) == int(terrain.orthophoto_metadata.route_shape_samples), "Bundled imagery must cover every route shape sample")
 	assert(terrain.orthophoto_metadata.stops_without_imagery.is_empty(), "Bundled imagery must cover every stop")

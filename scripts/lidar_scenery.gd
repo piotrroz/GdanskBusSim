@@ -96,6 +96,8 @@ func build_buildings() -> void:
 	var palette := [Color("d5c5b5"), Color("dadcd6"), Color("bcbfb7"), Color("d3b49e"), Color("e4ddcf")]
 	var terrain = city.terrain
 	for building in metadata.buildings:
+		if is_instance_valid(city.road) and city.road.building_clips.has(str(building.osm_id)):
+			continue
 		var color: Color = palette[int(building.osm_id) % palette.size()]
 		var roof_color: Color = ROOF_PALETTE[absi(hash(str(building.osm_id))) % ROOF_PALETTE.size()]
 		var base := float(building.base_height)

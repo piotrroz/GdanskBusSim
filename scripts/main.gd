@@ -94,7 +94,7 @@ func reset_bus() -> void:
 	var match_point: Dictionary = city.nearest(city.stop_positions[index], maxf(0, city.stop_distances[index] - 20))
 	var tangent: Vector3 = match_point.tangent
 	bus.position = match_point.point + tangent.cross(Vector3.UP) * 2.5 + Vector3.UP * 0.12
-	bus.position.y = city.height_at(bus.position) + 0.7
+	bus.position.y = city.surface_height(bus.position) + 0.6
 	bus.rotation = Vector3(0, atan2(-tangent.x, -tangent.z), 0)
 	bus.reset_motion()
 	bus.doors_open = false
